@@ -1,1 +1,335 @@
-hola
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad — Gym Blade</title>
+<style>
+  :root { --tinta: #16130f; --apoyo: #5c5346; --filo: #c0561f; --papel: #fbf9f6; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 80px;
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--tinta); background: var(--papel);
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 4px; }
+  h2 { font-size: 21px; margin: 40px 0 10px; border-top: 2px solid var(--filo); padding-top: 20px; }
+  h3 { font-size: 17px; margin: 26px 0 6px; }
+  .meta { color: var(--apoyo); font-size: 15px; margin: 0 0 8px; }
+  .lead { font-size: 18px; color: var(--apoyo); margin: 20px 0 0; }
+  ul { padding-left: 22px; }
+  li { margin: 7px 0; }
+  a { color: var(--filo); }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #e4ded5; vertical-align: top; }
+  th { font-weight: 600; }
+  .destacado {
+    background: #fff; border-left: 4px solid var(--filo);
+    padding: 14px 18px; margin: 20px 0;
+  }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid #e4ded5;
+           color: var(--apoyo); font-size: 15px; }
+  .lang { margin-bottom: 28px; font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="lang"><a href="#english">Read in English ↓</a></p>
+
+<h1>Política de privacidad</h1>
+<p class="meta">Gym Blade · Última actualización: 5 de agosto de 2026</p>
+
+<p class="lead">Gym Blade guarda tus datos en tu teléfono. No hay cuentas, no hay
+registro y no se sube tu historial a ningún sitio. Lo único que sale del
+dispositivo son las fotos de comida que decidas analizar y los códigos de barras
+que escanees, y solo cuando tú lo pides.</p>
+
+<h2>Quién es responsable</h2>
+<p>Sergio Dorado Salas, desarrollador individual de la aplicación, con domicilio en
+España. Puedes escribir a
+<strong>sdorados2006@gmail.com</strong> para cualquier cuestión relacionada con
+esta política o con tus datos.</p>
+
+<h2>Qué datos se quedan en tu teléfono</h2>
+
+<p>Todo lo siguiente se guarda únicamente en el almacenamiento local de tu
+dispositivo, en una base de datos que solo la aplicación puede leer. No se envía
+a ningún servidor:</p>
+
+<ul>
+  <li>Entrenamientos, series, pesos, repeticiones, rutinas y récords.</li>
+  <li>Peso corporal, estatura, medidas corporales, fecha de nacimiento y sexo.</li>
+  <li>Comidas registradas, alimentos, agua y objetivos de nutrición.</li>
+  <li>Notas de sesión y de ejercicio.</li>
+  <li>Recordatorios y preferencias de la aplicación.</li>
+  <li>Las fotos de comida y de perfil que guardes.</li>
+</ul>
+
+<p>Si desinstalas la aplicación, todo eso desaparece con ella. Desde
+<em>Ajustes</em> puedes exportar tus datos a un fichero o borrarlos por completo
+en cualquier momento.</p>
+
+<h2>Qué sale del teléfono</h2>
+
+<h3>1. Fotos de comida, si usas el análisis con inteligencia artificial</h3>
+
+<p>Cuando eliges analizar una foto de comida, esa imagen se envía a un servidor
+propio de la aplicación y desde ahí a <strong>Google Gemini</strong>, que la
+procesa para estimar qué alimentos aparecen y sus valores nutricionales
+aproximados.</p>
+
+<div class="destacado">
+  <p><strong>Esta función es opcional y requiere tu consentimiento
+  explícito.</strong> La primera vez que la uses se te pedirá permiso, y puedes
+  retirarlo en cualquier momento desde Ajustes. Sin ella, la aplicación funciona
+  igual: puedes registrar comidas escaneando el código de barras o
+  introduciéndolas a mano.</p>
+</div>
+
+<p><strong>Qué ocurre con la imagen:</strong></p>
+<ul>
+  <li>Antes de enviarla a Google se le retiran los metadatos de la cámara
+      —incluidos el modelo del dispositivo, la fecha de captura y cualquier
+      información de ubicación que pudiera contener—. Solo se conserva la
+      orientación y el perfil de color, necesarios para que la imagen se
+      interprete bien.</li>
+  <li>El servidor <strong>no guarda la foto</strong>: no tiene base de datos ni
+      almacenamiento permanente. La imagen se procesa durante la petición y se
+      descarta al terminar. Mientras se procesa puede escribirse en un fichero
+      temporal del sistema, que se elimina al cerrarse la petición.</li>
+  <li>La petición <strong>no incluye ningún identificador tuyo</strong>: la
+      aplicación no tiene cuentas ni envía identificadores de dispositivo. Las
+      fotos no se pueden asociar a una persona concreta.</li>
+  <li>Google Gemini se utiliza bajo un plan de pago. Según los términos de
+      Google para ese plan, el contenido enviado <strong>no se usa para entrenar
+      ni mejorar sus modelos</strong> y no es revisado por personas.</li>
+</ul>
+
+<p>El servidor está alojado en <strong>Render</strong>, que registra datos
+técnicos de las peticiones (fecha, método, ruta y código de respuesta) durante un
+periodo limitado, según su propia política.</p>
+
+<h3>2. Códigos de barras, si usas el escáner</h3>
+
+<p>Al escanear un producto, el código de barras se consulta en
+<strong>Open Food Facts</strong>, una base de datos pública y colaborativa de
+alimentos. Solo se envía el código; no se envía ninguna imagen ni ningún dato
+tuyo.</p>
+
+<h3>3. Comprobación de disponibilidad del servidor</h3>
+
+<p>Al abrir la pantalla de registro de comida, la aplicación envía una petición
+vacía al servidor para despertarlo si estaba inactivo. No contiene datos.</p>
+
+<h2>Sobre los resultados del análisis con IA</h2>
+
+<div class="destacado">
+  <p>Los valores que devuelve el análisis de fotos son <strong>una estimación
+  automática, no una medición</strong>. La inteligencia artificial identifica los
+  alimentos y calcula una cantidad aproximada a partir de la imagen, y puede
+  equivocarse tanto en qué alimento es como en cuánto hay.</p>
+</div>
+
+<p>La aplicación indica junto a cada resultado el grado de fiabilidad estimado y
+señala qué conviene revisar. Todos los valores se pueden corregir a mano antes de
+guardarlos, y recomendamos hacerlo.</p>
+
+<p>Gym Blade es una herramienta de bienestar general. No es un producto sanitario
+ni sustituye el consejo de un profesional de la salud, la medicina o la
+nutrición. Los objetivos calóricos y de macronutrientes que calcula son
+estimaciones basadas en fórmulas y referencias públicas, y no constituyen una
+recomendación médica ni dietética personalizada.</p>
+
+<h2>Permisos que solicita la aplicación</h2>
+
+<table>
+  <tr><th>Permiso</th><th>Para qué</th></tr>
+  <tr>
+    <td>Cámara</td>
+    <td>Fotografiar comidas, escanear códigos de barras y elegir tu foto de
+        perfil. Se solicita la primera vez que usas una de esas funciones.</td>
+  </tr>
+  <tr>
+    <td>Notificaciones</td>
+    <td>Avisarte del final del descanso entre series, de los recordatorios que
+        crees y del aviso de entrenamiento. Se solicita al activar cada
+        función.</td>
+  </tr>
+  <tr>
+    <td>Arranque del dispositivo</td>
+    <td>Restaurar los recordatorios que hayas programado después de reiniciar el
+        teléfono.</td>
+  </tr>
+</table>
+
+<p>Ninguno de estos permisos es obligatorio para usar la aplicación. Si los
+deniegas, dejan de funcionar únicamente las partes que dependen de ellos.</p>
+
+<h2>Menores de edad</h2>
+
+<p>Gym Blade no está dirigida a menores de 14 años y no recoge datos de forma
+consciente de personas por debajo de esa edad. Si eres menor de 14 años,
+necesitas la autorización de quien tenga tu patria potestad o tutela para usar la
+aplicación.</p>
+
+<h2>Tus derechos</h2>
+
+<p>Como todos tus datos están en tu dispositivo y no se conservan en ningún
+servidor, tienes control directo sobre ellos:</p>
+
+<ul>
+  <li><strong>Acceder y portar</strong>: desde <em>Ajustes → Exportar datos</em>
+      obtienes un fichero con toda tu información.</li>
+  <li><strong>Suprimir</strong>: desde <em>Ajustes → Borrar todos los datos</em>,
+      o desinstalando la aplicación.</li>
+  <li><strong>Retirar el consentimiento</strong> del análisis con IA en cualquier
+      momento desde Ajustes.</li>
+</ul>
+
+<p>Si consideras que el tratamiento de tus datos no cumple la normativa, puedes
+presentar una reclamación ante la Agencia Española de Protección de Datos
+(<a href="https://www.aepd.es">aepd.es</a>).</p>
+
+<h2>Cambios en esta política</h2>
+
+<p>Si esta política cambia, se actualizará la fecha del encabezado. Si el cambio
+afecta a cómo se tratan tus datos, se avisará dentro de la aplicación.</p>
+
+<hr style="margin:56px 0; border:none; border-top:2px solid var(--filo);">
+
+<h1 id="english">Privacy Policy</h1>
+<p class="meta">Gym Blade · Last updated: 5 August 2026</p>
+
+<p class="lead">Gym Blade keeps your data on your phone. There are no accounts, no
+sign-up, and your history is never uploaded anywhere. The only things that leave
+your device are the meal photos you choose to analyse and the barcodes you scan,
+and only when you ask for it.</p>
+
+<h2>Who is responsible</h2>
+<p>Sergio Dorado, individual developer of the application, based in Spain. You
+can write to <strong>[YOUR CONTACT EMAIL]</strong> with any question about this
+policy or your data.</p>
+
+<h2>What stays on your phone</h2>
+<p>All of the following is stored only in your device's local storage, in a
+database that only the app can read. None of it is sent to any server:</p>
+<ul>
+  <li>Workouts, sets, weights, reps, routines and personal records.</li>
+  <li>Body weight, height, body measurements, date of birth and sex.</li>
+  <li>Logged meals, foods, water and nutrition goals.</li>
+  <li>Session and exercise notes.</li>
+  <li>Reminders and app preferences.</li>
+  <li>The meal and profile photos you save.</li>
+</ul>
+<p>If you uninstall the app, all of it goes with it. From <em>Settings</em> you
+can export your data to a file or delete it entirely at any time.</p>
+
+<h2>What leaves your phone</h2>
+
+<h3>1. Meal photos, if you use AI analysis</h3>
+<p>When you choose to analyse a meal photo, that image is sent to the app's own
+server and from there to <strong>Google Gemini</strong>, which processes it to
+estimate which foods appear and their approximate nutritional values.</p>
+
+<div class="destacado">
+  <p><strong>This feature is optional and requires your explicit
+  consent.</strong> You will be asked the first time you use it, and you can
+  withdraw it at any time from Settings. Without it the app works just the same:
+  you can log meals by scanning a barcode or entering them manually.</p>
+</div>
+
+<p><strong>What happens to the image:</strong></p>
+<ul>
+  <li>Before it is sent to Google, camera metadata is stripped — including device
+      model, capture date and any location information it might contain. Only
+      orientation and colour profile are kept, as they are needed for the image
+      to be interpreted correctly.</li>
+  <li>The server <strong>does not store the photo</strong>: it has no database
+      and no persistent storage. The image is processed during the request and
+      discarded when it ends. While being processed it may be written to a
+      temporary system file, which is removed when the request closes.</li>
+  <li>The request <strong>contains no identifier of yours</strong>: the app has
+      no accounts and sends no device identifiers. Photos cannot be linked to a
+      specific person.</li>
+  <li>Google Gemini is used under a paid plan. Under Google's terms for that
+      plan, submitted content <strong>is not used to train or improve their
+      models</strong> and is not reviewed by humans.</li>
+</ul>
+
+<p>The server is hosted on <strong>Render</strong>, which logs technical request
+data (date, method, path and response code) for a limited period, according to
+its own policy.</p>
+
+<h3>2. Barcodes, if you use the scanner</h3>
+<p>When you scan a product, the barcode is looked up in
+<strong>Open Food Facts</strong>, a public collaborative food database. Only the
+code is sent; no image and no data of yours.</p>
+
+<h3>3. Server availability check</h3>
+<p>When you open the meal logging screen, the app sends an empty request to wake
+the server if it was idle. It contains no data.</p>
+
+<h2>About AI analysis results</h2>
+<div class="destacado">
+  <p>The values returned by photo analysis are <strong>an automated estimate, not
+  a measurement</strong>. The AI identifies foods and calculates an approximate
+  quantity from the image, and it can be wrong about both what the food is and
+  how much of it there is.</p>
+</div>
+<p>The app shows an estimated confidence level next to each result and points out
+what is worth checking. All values can be corrected by hand before saving, and we
+recommend doing so.</p>
+<p>Gym Blade is a general wellness tool. It is not a medical device and does not
+replace advice from a health, medical or nutrition professional. The calorie and
+macronutrient targets it calculates are estimates based on public formulas and
+references, and are not personalised medical or dietary advice.</p>
+
+<h2>Permissions the app requests</h2>
+<table>
+  <tr><th>Permission</th><th>What for</th></tr>
+  <tr><td>Camera</td>
+      <td>Photographing meals, scanning barcodes and choosing your profile
+          picture. Requested the first time you use one of those features.</td></tr>
+  <tr><td>Notifications</td>
+      <td>Alerting you when a rest between sets ends, for reminders you create,
+          and for the training reminder. Requested when you enable each
+          feature.</td></tr>
+  <tr><td>Device boot</td>
+      <td>Restoring reminders you have scheduled after your phone restarts.</td></tr>
+</table>
+<p>None of these permissions is required to use the app. If you deny them, only
+the parts that depend on them stop working.</p>
+
+<h2>Minors</h2>
+<p>Gym Blade is not directed at children under 14 and does not knowingly collect
+data from people below that age. If you are under 14, you need permission from
+your parent or guardian to use the app.</p>
+
+<h2>Your rights</h2>
+<p>Since all your data is on your device and is not kept on any server, you have
+direct control over it:</p>
+<ul>
+  <li><strong>Access and portability</strong>: <em>Settings → Export data</em>
+      gives you a file with all your information.</li>
+  <li><strong>Erasure</strong>: <em>Settings → Delete all data</em>, or by
+      uninstalling the app.</li>
+  <li><strong>Withdrawing consent</strong> for AI analysis at any time from
+      Settings.</li>
+</ul>
+<p>If you believe your data is not being handled lawfully, you may file a
+complaint with the Spanish Data Protection Agency
+(<a href="https://www.aepd.es">aepd.es</a>).</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the date at the top will be updated. If the change
+affects how your data is handled, you will be notified within the app.</p>
+
+<footer>
+  <p>Gym Blade · <a href="https://arc-blade.github.io/gymblade-privacidad/">arc-blade.github.io/gymblade-privacidad</a></p>
+</footer>
+
+</main>
+</body>
+</html>
