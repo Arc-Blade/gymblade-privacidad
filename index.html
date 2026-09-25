@@ -39,12 +39,13 @@
 <p class="lang"><a href="#english">Read in English ↓</a></p>
 
 <h1>Política de privacidad</h1>
-<p class="meta">GymBlade · Última actualización: 22 de agosto de 2026</p>
+<p class="meta">GymBlade · Última actualización: 25 de septiembre de 2026</p>
 
 <p class="lead">GymBlade guarda tus datos en tu teléfono. No hay cuentas, no hay
-registro y no se sube tu historial a ningún sitio. Lo único que sale del
-dispositivo son las fotos de comida que decidas analizar y los códigos de barras
-que escanees, y solo cuando tú lo pides.</p>
+registro y no se sube tu historial a ningún sitio. Del dispositivo solo sale lo
+que hace falta para las funciones que tú pides —una foto de comida que analizar,
+una rutina que generar, un código de barras que consultar—, y nada de eso lleva
+tu nombre ni tu historial.</p>
 
 <h2>Quién es responsable</h2>
 <p>Sergio Dorado Salas, desarrollador individual de la aplicación, conocido
@@ -66,16 +67,22 @@ a ningún servidor:</p>
   <li>Notas de sesión y de ejercicio.</li>
   <li>Recordatorios y preferencias de la aplicación.</li>
   <li>Las fotos de comida y de perfil que guardes.</li>
+  <li>Si tienes Premium, la última respuesta de la tienda sobre tu suscripción y
+      cuándo se comprobó.</li>
+  <li>Un registro técnico de fallos de la aplicación, que no se envía a ningún
+      sitio.</li>
 </ul>
 
 <p>Si desinstalas la aplicación, todo eso desaparece con ella. Desde
 <em>Ajustes</em> puedes exportar tus datos a un fichero o borrarlos por completo
 en cualquier momento.</p>
 
-<p>La aplicación queda fuera de la copia de seguridad de Android: ni tu historial
-ni tus fotos se suben a tu cuenta de Google, y tampoco viajan en una
-transferencia entre teléfonos. A cambio, si cambias de móvil o reinstalas la
-aplicación, esos datos no vuelven solos.</p>
+<p>La aplicación queda fuera de las copias de seguridad del sistema. En Android,
+ni tu historial ni tus fotos se suben a tu cuenta de Google, y tampoco viajan en
+una transferencia entre teléfonos. En iPhone, quedan fuera de la copia de
+seguridad de iCloud. A cambio, si reinstalas la aplicación o restauras el
+teléfono desde una copia, esos datos no vuelven solos. Si vas a cambiar de móvil,
+exporta antes una copia desde <em>Ajustes</em> para quedarte con ella.</p>
 
 <h2>Qué sale del teléfono</h2>
 
@@ -105,9 +112,10 @@ aproximados.</p>
       almacenamiento permanente. La imagen se procesa durante la petición y se
       descarta al terminar. Mientras se procesa puede escribirse en un fichero
       temporal del sistema, que se elimina al cerrarse la petición.</li>
-  <li>La petición <strong>no incluye ningún identificador tuyo</strong>: la
-      aplicación no tiene cuentas ni envía identificadores de dispositivo. Las
-      fotos no se pueden asociar a una persona concreta.</li>
+  <li>La petición <strong>no lleva cuentas ni identificadores del
+      dispositivo</strong>: solo la foto y el idioma en que quieres el resultado.
+      La foto no se guarda ni se relaciona con tu dirección IP (ver el punto
+      6).</li>
   <li>Google Gemini se utiliza bajo un plan de pago. Según los términos de
       Google para ese plan, el contenido enviado <strong>no se usa para entrenar
       ni mejorar sus modelos</strong> y no es revisado por personas.</li>
@@ -117,17 +125,68 @@ aproximados.</p>
 técnicos de las peticiones (fecha, método, ruta y código de respuesta) durante un
 periodo limitado, según su propia política.</p>
 
-<h3>2. Códigos de barras, si usas el escáner</h3>
+<h3>2. Las preferencias de una rutina, si pides que la aplicación te la genere</h3>
+
+<p>Cuando pides a la aplicación que te genere una rutina o la sesión de hoy, se
+envía al mismo servidor, y desde ahí a <strong>Google Gemini</strong>, lo que has
+elegido en el formulario: cuántos días y qué zonas del cuerpo toca cada uno, si
+quieres insistir en algún grupo muscular, y la lista de ejercicios del catálogo
+entre los que elegir, ya filtrada por tu material y por lo que quieres evitar.
+Nada más: <strong>no se envía tu historial, ni tu peso, ni ningún dato de tu
+perfil</strong>. Como con las fotos, el servidor no guarda nada y Gemini lo trata
+bajo el mismo plan de pago.</p>
+
+<h3>3. Códigos de barras, si usas el escáner</h3>
 
 <p>Al escanear un producto, el código de barras se consulta en
 <strong>Open Food Facts</strong>, una base de datos pública y colaborativa de
 alimentos. Solo se envía el código; no se envía ninguna imagen ni ningún dato
 tuyo.</p>
 
-<h3>3. Comprobación de disponibilidad del servidor</h3>
+<h3>4. Las imágenes de los ejercicios</h3>
 
-<p>Al abrir la pantalla de registro de comida, la aplicación envía una petición
-vacía al servidor para despertarlo si estaba inactivo. No contiene datos.</p>
+<p>Las fotos que ilustran cada ejercicio del catálogo vienen del proyecto público
+<strong>free-exercise-db</strong>, alojado en GitHub. Se descargan la primera vez
+que las ves y se guardan en el teléfono. La descarga no lleva ningún dato tuyo;
+como cualquier descarga de internet, GitHub recibe la dirección IP desde la que
+se hace.</p>
+
+<h3>5. Comprobación de disponibilidad del servidor</h3>
+
+<p>Al abrir las pantallas que usan el servidor —registrar una comida, generar una
+rutina o una sesión—, la aplicación le envía una petición vacía para despertarlo
+si estaba inactivo. No contiene datos.</p>
+
+<h3>6. Tu dirección IP, para limitar el uso por hora</h3>
+
+<p>El análisis de fotos y la generación de rutinas cuestan dinero por cada uso,
+así que el servidor limita cuántas peticiones de cada tipo se pueden hacer por
+hora desde una misma conexión. Para contarlas usa la <strong>dirección IP</strong>
+desde la que llega la petición: la guarda <strong>solo en la memoria del
+servidor</strong>, junto a la hora de cada petición, y la descarta una vez pasada
+esa hora. El servidor no la escribe en disco ni en ningún registro, y no la
+relaciona con la foto ni con ningún otro dato.</p>
+
+<h2>Compras y suscripción Premium</h2>
+
+<p>Si contratas Premium, <strong>el pago lo gestiona por completo Google Play o el
+App Store</strong>, según tu teléfono. GymBlade no ve ni guarda tus datos de pago,
+y la compra queda en tu cuenta de Google o de Apple, bajo su propia política de
+privacidad.</p>
+
+<p>Para saber si tienes la suscripción activa, la aplicación se lo pregunta a la
+tienda <strong>desde tu propio teléfono</strong> y guarda la respuesta en él —si
+hay suscripción y cuándo se comprobó—. No pasa por ningún servidor de
+GymBlade.</p>
+
+<p>La suscripción se gestiona y se cancela en la tienda: en la app de Google Play,
+en <em>Pagos y suscripciones</em>; en el iPhone, en <em>Ajustes → tu nombre →
+Suscripciones</em>. Desde <em>Ajustes → Premium</em> de GymBlade tienes un enlace
+directo. Borrar los datos de la aplicación o desinstalarla <strong>no
+cancela</strong> la suscripción.</p>
+
+<p>En Android, la aplicación pregunta además a Google Play si hay una versión más
+nueva, para avisarte.</p>
 
 <h2>Sobre los resultados del análisis con IA</h2>
 
@@ -146,7 +205,9 @@ guardarlos, y recomendamos hacerlo.</p>
 ni sustituye el consejo de un profesional de la salud, la medicina o la
 nutrición. Los objetivos calóricos y de macronutrientes que calcula son
 estimaciones basadas en fórmulas y referencias públicas, y no constituyen una
-recomendación médica ni dietética personalizada.</p>
+recomendación médica ni dietética personalizada. En <em>Ajustes → De dónde salen
+las cifras</em> tienes el método y la fuente de cada cifra, con enlaces a los
+estudios.</p>
 
 <h2>Permisos que solicita la aplicación</h2>
 
@@ -158,13 +219,18 @@ recomendación médica ni dietética personalizada.</p>
         perfil. Se solicita la primera vez que usas una de esas funciones.</td>
   </tr>
   <tr>
+    <td>Fotos (solo iPhone)</td>
+    <td>Elegir de tu galería una foto de comida o tu foto de perfil. En Android
+        se usa el selector de fotos del sistema, que no necesita permiso.</td>
+  </tr>
+  <tr>
     <td>Notificaciones</td>
     <td>Avisarte del final del descanso entre series, de los recordatorios que
         crees y del aviso de entrenamiento. Se solicita al activar cada
         función.</td>
   </tr>
   <tr>
-    <td>Arranque del dispositivo</td>
+    <td>Arranque del dispositivo (solo Android)</td>
     <td>Restaurar los recordatorios que hayas programado después de reiniciar el
         teléfono.</td>
   </tr>
@@ -172,6 +238,19 @@ recomendación médica ni dietética personalizada.</p>
 
 <p>Ninguno de estos permisos es obligatorio para usar la aplicación. Si los
 deniegas, dejan de funcionar únicamente las partes que dependen de ellos.</p>
+
+<h2>Por qué se tratan estos datos</h2>
+
+<ul>
+  <li><strong>Análisis de fotos</strong>: tu consentimiento, que puedes retirar
+      cuando quieras desde Ajustes.</li>
+  <li><strong>Generación de rutinas y consulta de códigos de barras</strong>:
+      prestarte el servicio que pides en ese momento.</li>
+  <li><strong>Dirección IP para el límite por hora</strong>: el interés legítimo
+      en evitar que se abuse de un servidor que cuesta dinero por cada uso.</li>
+  <li><strong>Compras</strong>: las tramitan Google Play o el App Store, que son
+      responsables de su propio tratamiento.</li>
+</ul>
 
 <h2>Menores de edad</h2>
 
@@ -197,6 +276,12 @@ momento, desde la propia aplicación y sin necesidad de solicitárselo a nadie.<
 <p>Desinstalar GymBlade elimina también todos sus datos del dispositivo, ya que
 no se conserva ninguna copia fuera de él.</p>
 
+<div class="destacado">
+  <p>Ni borrar los datos ni desinstalar la aplicación <strong>cancelan una
+  suscripción Premium</strong>. Se cancela en Google Play o en el App Store; ver
+  «Compras y suscripción Premium».</p>
+</div>
+
 <h3>Qué se elimina</h3>
 <p>Todo lo que has creado en la aplicación: entrenamientos, series, rutinas y
 récords; peso, estatura y medidas corporales; comidas, alimentos, agua y
@@ -207,8 +292,12 @@ de comida y de perfil que hayas guardado; y las preferencias de la aplicación.<
 <ul>
   <li><strong>En nuestros servidores: nada.</strong> No existe ninguna cuenta ni
       base de datos con tu información. Las fotos que envías al análisis con IA
-      se procesan durante la petición y se descartan al terminar; no se
-      almacenan ni antes ni después.</li>
+      y las preferencias de las rutinas que generas se procesan durante la
+      petición y se descartan al terminar; no se almacenan ni antes ni
+      después.</li>
+  <li><strong>Tu dirección IP</strong>, solo en la memoria del servidor y durante
+      una hora como máximo, para el límite de uso. Ver «Qué sale del teléfono»,
+      punto 6.</li>
   <li><strong>Registros técnicos del proveedor de alojamiento (Render):</strong>
       datos de las peticiones al servidor —fecha, método, ruta y código de
       respuesta— que se conservan durante un máximo de 7 días y se eliminan
@@ -216,6 +305,8 @@ de comida y de perfil que hayas guardado; y las preferencias de la aplicación.<
   <li><strong>Google Gemini:</strong> el contenido enviado se trata bajo un plan
       de pago y, según los términos de Google para ese plan, no se usa para
       entrenar sus modelos ni es revisado por personas.</li>
+  <li><strong>Tus compras</strong>, en tu cuenta de Google Play o del App Store,
+      según sus propias políticas. Borrar GymBlade no las toca.</li>
 </ul>
 
 <p>Si prefieres solicitarlo por escrito o tienes cualquier duda sobre este
@@ -234,6 +325,8 @@ servidor, tienes control directo sobre ellos:</p>
       o desinstalando la aplicación.</li>
   <li><strong>Retirar el consentimiento</strong> del análisis con IA en cualquier
       momento desde Ajustes.</li>
+  <li><strong>Cancelar Premium</strong> cuando quieras, desde Google Play o el App
+      Store.</li>
 </ul>
 
 <p>Si consideras que el tratamiento de tus datos no cumple la normativa, puedes
@@ -248,12 +341,13 @@ afecta a cómo se tratan tus datos, se avisará dentro de la aplicación.</p>
 <hr style="margin:56px 0; border:none; border-top:2px solid var(--filo);">
 
 <h1 id="english">Privacy Policy</h1>
-<p class="meta">GymBlade · Last updated: 22 August 2026</p>
+<p class="meta">GymBlade · Last updated: 25 September 2026</p>
 
 <p class="lead">GymBlade keeps your data on your phone. There are no accounts, no
 sign-up, and your history is never uploaded anywhere. The only things that leave
-your device are the meal photos you choose to analyse and the barcodes you scan,
-and only when you ask for it.</p>
+your device are what the features you ask for need — a meal photo to analyse, a
+routine to generate, a barcode to look up — and none of it carries your name or
+your history.</p>
 
 <h2>Who is responsible</h2>
 <p>Sergio Dorado Salas, individual developer of the application, publicly known
@@ -270,14 +364,19 @@ database that only the app can read. None of it is sent to any server:</p>
   <li>Session and exercise notes.</li>
   <li>Reminders and app preferences.</li>
   <li>The meal and profile photos you save.</li>
+  <li>If you have Premium, the store's latest answer about your subscription and
+      when it was checked.</li>
+  <li>A technical log of app errors, which is not sent anywhere.</li>
 </ul>
 <p>If you uninstall the app, all of it goes with it. From <em>Settings</em> you
 can export your data to a file or delete it entirely at any time.</p>
 
-<p>The app is left out of Android's backup: neither your history nor your photos
-are uploaded to your Google account, and they do not travel in a phone-to-phone
-transfer either. In exchange, if you change phone or reinstall the app, that data
-does not come back on its own.</p>
+<p>The app is left out of the system backups. On Android, neither your history
+nor your photos are uploaded to your Google account, and they do not travel in a
+phone-to-phone transfer either. On iPhone, they are left out of the iCloud
+backup. In exchange, if you reinstall the app or restore the phone from a backup,
+that data does not come back on its own. If you are changing phones, export a
+copy from <em>Settings</em> first to keep it.</p>
 
 <h2>What leaves your phone</h2>
 
@@ -303,9 +402,10 @@ estimate which foods appear and their approximate nutritional values.</p>
       and no persistent storage. The image is processed during the request and
       discarded when it ends. While being processed it may be written to a
       temporary system file, which is removed when the request closes.</li>
-  <li>The request <strong>contains no identifier of yours</strong>: the app has
-      no accounts and sends no device identifiers. Photos cannot be linked to a
-      specific person.</li>
+  <li>The request <strong>carries no account and no device
+      identifier</strong>: only the photo and the language you want the result
+      in. The photo is not stored and is not linked to your IP address (see
+      point 6).</li>
   <li>Google Gemini is used under a paid plan. Under Google's terms for that
       plan, submitted content <strong>is not used to train or improve their
       models</strong> and is not reviewed by humans.</li>
@@ -315,14 +415,58 @@ estimate which foods appear and their approximate nutritional values.</p>
 data (date, method, path and response code) for a limited period, according to
 its own policy.</p>
 
-<h3>2. Barcodes, if you use the scanner</h3>
+<h3>2. Routine preferences, if you ask the app to generate one</h3>
+<p>When you ask the app to generate a routine or today's session, what you chose
+in the form is sent to the same server and from there to <strong>Google
+Gemini</strong>: how many days and which body areas each one covers, whether you
+want to emphasise a muscle group, and the list of catalogue exercises to choose
+from, already filtered by your equipment and by what you want to avoid. Nothing
+else: <strong>not your history, not your weight, not any profile data</strong>.
+As with photos, the server stores nothing and Gemini handles it under the same
+paid plan.</p>
+
+<h3>3. Barcodes, if you use the scanner</h3>
 <p>When you scan a product, the barcode is looked up in
 <strong>Open Food Facts</strong>, a public collaborative food database. Only the
 code is sent; no image and no data of yours.</p>
 
-<h3>3. Server availability check</h3>
-<p>When you open the meal logging screen, the app sends an empty request to wake
-the server if it was idle. It contains no data.</p>
+<h3>4. Exercise images</h3>
+<p>The pictures that illustrate each catalogue exercise come from the public
+<strong>free-exercise-db</strong> project, hosted on GitHub. They are downloaded
+the first time you see them and kept on the phone. The download carries no data
+of yours; like any download from the internet, GitHub receives the IP address it
+comes from.</p>
+
+<h3>5. Server availability check</h3>
+<p>When you open a screen that uses the server — logging a meal, generating a
+routine or a session — the app sends it an empty request to wake it if it was
+idle. It contains no data.</p>
+
+<h3>6. Your IP address, to limit use per hour</h3>
+<p>Photo analysis and routine generation cost money on every use, so the server
+limits how many requests of each kind can be made per hour from the same
+connection. To count them it uses the <strong>IP address</strong> the request
+comes from: it keeps it <strong>only in the server's memory</strong>, together
+with the time of each request, and discards it once that hour has passed. The
+server does not write it to disk or to any log, and does not link it to the photo
+or to any other data.</p>
+
+<h2>Purchases and the Premium subscription</h2>
+<p>If you buy Premium, <strong>payment is handled entirely by Google Play or the
+App Store</strong>, depending on your phone. GymBlade never sees or stores your
+payment details, and the purchase stays in your Google or Apple account, under
+their own privacy policy.</p>
+<p>To know whether your subscription is active, the app asks the store
+<strong>from your own phone</strong> and keeps the answer on it — whether there is
+a subscription and when it was checked. It does not go through any GymBlade
+server.</p>
+<p>The subscription is managed and cancelled in the store: in the Google Play app,
+under <em>Payments &amp; subscriptions</em>; on iPhone, under <em>Settings → your
+name → Subscriptions</em>. GymBlade's <em>Settings → Premium</em> has a direct
+link. Deleting the app's data or uninstalling it <strong>does not cancel</strong>
+the subscription.</p>
+<p>On Android, the app also asks Google Play whether a newer version is
+available, so it can let you know.</p>
 
 <h2>About AI analysis results</h2>
 <div class="destacado">
@@ -337,7 +481,9 @@ recommend doing so.</p>
 <p>GymBlade is a general wellness tool. It is not a medical device and does not
 replace advice from a health, medical or nutrition professional. The calorie and
 macronutrient targets it calculates are estimates based on public formulas and
-references, and are not personalised medical or dietary advice.</p>
+references, and are not personalised medical or dietary advice. <em>Settings →
+Where the numbers come from</em> has the method and the source of every figure,
+with links to the studies.</p>
 
 <h2>Permissions the app requests</h2>
 <table>
@@ -345,15 +491,31 @@ references, and are not personalised medical or dietary advice.</p>
   <tr><td>Camera</td>
       <td>Photographing meals, scanning barcodes and choosing your profile
           picture. Requested the first time you use one of those features.</td></tr>
+  <tr><td>Photos (iPhone only)</td>
+      <td>Picking a meal photo or your profile picture from your library. On
+          Android the system photo picker is used, which needs no
+          permission.</td></tr>
   <tr><td>Notifications</td>
       <td>Alerting you when a rest between sets ends, for reminders you create,
           and for the training reminder. Requested when you enable each
           feature.</td></tr>
-  <tr><td>Device boot</td>
+  <tr><td>Device boot (Android only)</td>
       <td>Restoring reminders you have scheduled after your phone restarts.</td></tr>
 </table>
 <p>None of these permissions is required to use the app. If you deny them, only
 the parts that depend on them stop working.</p>
+
+<h2>Why this data is processed</h2>
+<ul>
+  <li><strong>Photo analysis</strong>: your consent, which you can withdraw at any
+      time from Settings.</li>
+  <li><strong>Routine generation and barcode lookup</strong>: providing the
+      service you ask for at that moment.</li>
+  <li><strong>IP address for the hourly limit</strong>: the legitimate interest
+      in preventing abuse of a server that costs money on every use.</li>
+  <li><strong>Purchases</strong>: processed by Google Play or the App Store, each
+      responsible for its own processing.</li>
+</ul>
 
 <h2>Minors</h2>
 <p>GymBlade is not directed at children under 14 and does not knowingly collect
@@ -377,6 +539,12 @@ within the app itself and without having to ask anyone.</p>
 <p>Uninstalling GymBlade also removes all its data from your device, since no
 copy is kept anywhere else.</p>
 
+<div class="destacado">
+  <p>Neither deleting your data nor uninstalling the app <strong>cancels a Premium
+  subscription</strong>. It is cancelled in Google Play or the App Store; see
+  "Purchases and the Premium subscription".</p>
+</div>
+
 <h3>What is deleted</h3>
 <p>Everything you have created in the app: workouts, sets, routines and records;
 weight, height and body measurements; meals, foods, water and nutrition goals;
@@ -386,9 +554,12 @@ saved; and app preferences.</p>
 <h3>What is retained, and for how long</h3>
 <ul>
   <li><strong>On our servers: nothing.</strong> There is no account and no
-      database holding your information. Photos sent for AI analysis are
-      processed during the request and discarded when it ends; they are not
-      stored before or after.</li>
+      database holding your information. Photos sent for AI analysis and the
+      preferences of routines you generate are processed during the request and
+      discarded when it ends; they are not stored before or after.</li>
+  <li><strong>Your IP address</strong>, only in the server's memory and for one
+      hour at most, for the usage limit. See "What leaves your phone", point
+      6.</li>
   <li><strong>Technical logs from the hosting provider (Render):</strong> server
       request data — date, method, path and response code — kept for a maximum
       of 7 days and deleted automatically. They contain no photos and no personal
@@ -396,6 +567,8 @@ saved; and app preferences.</p>
   <li><strong>Google Gemini:</strong> submitted content is handled under a paid
       plan and, per Google's terms for that plan, is not used to train their
       models and is not reviewed by humans.</li>
+  <li><strong>Your purchases</strong>, in your Google Play or App Store account,
+      under their own policies. Deleting GymBlade does not touch them.</li>
 </ul>
 
 <p>If you would rather request it in writing, or have any question about this
@@ -412,6 +585,8 @@ direct control over it:</p>
       uninstalling the app.</li>
   <li><strong>Withdrawing consent</strong> for AI analysis at any time from
       Settings.</li>
+  <li><strong>Cancelling Premium</strong> whenever you like, from Google Play or
+      the App Store.</li>
 </ul>
 <p>If you believe your data is not being handled lawfully, you may file a
 complaint with the Spanish Data Protection Agency
